@@ -1,0 +1,56 @@
+img {
+  width: 286px;
+  height: 250px;
+  object-fit: fill;
+}
+#cardsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.cardsDiv {
+  border: 0.5px solid black;
+  border-radius: 6px;
+}
+.txtDiv {
+  padding: 0 10px 10px 10px;
+}
+.usersFirstName {
+  margin-bottom: 0;
+}
+.usersLastName {
+  margin-top: 0;
+}
+
+#circleCard,
+#corporateCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 50px;
+}
+.usersImg2 {
+  border-radius: 50%;
+}
+#corporateCard {
+}
+.usersImg3 {
+  border-radius: 9px;
+}
+.cardsDiv3 {
+  position: relative;
+}
+.txtDiv3 {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+.usersFirstName3,
+.usersLastName3 {
+  color: white;
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
+  text-shadow: 0px 0px 2px rgba(14, 10, 128, 1);
+}
