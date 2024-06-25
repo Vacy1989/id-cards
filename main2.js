@@ -26,6 +26,8 @@ const users = [
 ];
 
 const cardsList = document.getElementById("cardsList");
+const circleCardImg = document.getElementById("circleCard");
+const corporateCardDiv = document.getElementById("corporateCard");
 
 function createCard(user) {
   cardsList.innerHTML += `
@@ -35,28 +37,19 @@ function createCard(user) {
         <h1 class="usersFirstName">${user.firstName || "N/A"}</h1>
         <h1 class="usersLastName">${user.lastName || "N/A"}</h2>
         <p class="age">${user.age || ""}</p>
-        <div>
+      </div>
     </div>
-    `;
+  `;
 }
-for (let i = 0; i < users.length; i++) {
-  let user = users[i];
-  createCard(user);
-}
-const circleCardImg = document.getElementById("circleCard");
 
 function circleCard(user) {
-  circleCardImg.innerHTML += `<div class="circleDiv">
+  circleCardImg.innerHTML += `
+    <div class="circleDiv">
       <img class="usersImg2" src="${user.profileImage}">
     </div>
-    `;
-}
-for (let i = 0; i < users.length; i++) {
-  let user = users[i];
-  circleCard(user);
+  `;
 }
 
-const corporateCardDiv = document.getElementById("corporateCard");
 function corporateCard(user) {
   corporateCardDiv.innerHTML += `
     <div class="cardsDiv3">
@@ -64,14 +57,21 @@ function corporateCard(user) {
       <div class="txtDiv3">
         <h1 class="usersFirstName3">${user.firstName || "N/A"}</h1>
         <h1 class="usersLastName3">${user.lastName || "N/A"}</h2>
-        <div>
+      </div>
     </div>
-    `;
+  `;
 }
-for (let i = 0; i < users.length; i++) {
-  let user = users[i];
-  corporateCard(user);
+
+function usersCards(users, callback) {
+  for (let i = 0; i < users.length; i++) {
+    callback(users[i]);
+  }
 }
+
+usersCards(users, createCard);
+usersCards(users, circleCard);
+usersCards(users, corporateCard);
+
 /*
 createCard({
   profileImage:
@@ -99,14 +99,4 @@ for (let i = 0; i < users.length; i++) {
 
 console.log(result.join("#"));
 
-const arr = [
-  56,
-  null,
-  undefined,
-  false,
-  "Valentina",
-  { bla: { foo: "bar" } },
-  [1, 2, 3],
-];
-console.log(arr[5].bla.foo[0]);
 */
